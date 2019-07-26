@@ -67,14 +67,14 @@ namespace Angel
                     {
                         CollectionId = 3,
                         CollectionName = "C",
-                        ManufacturerId = 3,                        
+                        ManufacturerId = 1,                        
                         Description = "Chronograph",
                         ImageURL = ""
                     },
                     new Collection()
                     {
                         CollectionId = 4,
-                        ManufacturerId = 4,                       
+                        ManufacturerId = 2,                       
                         Description = "Chronograph",
                         ImageURL = ""
                     }
