@@ -10,16 +10,16 @@ namespace Angel
     
         public class SiteContext : DbContext
         {
-            public DbSet<Collection> Collection { get; set; }
-            public DbSet<Manufacturer> Manufacturer { get; set; }
-            public DbSet<Watch> Watch { get; set; }
+            public DbSet<Collection> Collections { get; set; }
+            public DbSet<Manufacturer> Manufacturers { get; set; }
+            public DbSet<Watch> Watches { get; set; }
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                var connectionString = "Server=(localdb)\\mssqllocaldb;Database=DripCoffeeAlbumCollection;Trusted_Connection=True;";
+                var connectionString = "Server=(localdb)\\mssqllocaldb;Database=Angel;Trusted_Connection=True;";
 
-                      optionsBuilder.UseSqlServer(connectionString);
-                            //.UseLazyLoadingProxies();
+                      optionsBuilder.UseSqlServer(connectionString)
+                            .UseLazyLoadingProxies();
 
                 base.OnConfiguring(optionsBuilder);
             }
@@ -29,7 +29,7 @@ namespace Angel
                 modelBuilder.Entity<Manufacturer>().HasData(
                     new Manufacturer()
                     {
-                        ManuId = 1,
+                        ManufacturerId = 1,
                         Name = "Rolex",                        
                         Description ="Diver",
                         ImageURL = "",
@@ -37,35 +37,20 @@ namespace Angel
                     },
                     new Manufacturer()
                     {
-                        ManuId = 2,
-                        Name = "Rolex",
+                        ManufacturerId = 2,
+                        Name = "Omega SA",
                         Description = "Pilot",
                         ImageURL = "",
                         Country = "Swiss"
-                    },
-                    new Manufacturer()
-                    {
-                        ManuId = 3,
-                        Name = "Rolex",
-                        Description = "Chrongraph",
-                        ImageURL = "",
-                       Country = "Swiss"
-                    },
-                    new Manufacturer()
-                    {
-                        ManuId = 4,
-                        Name = "Rolex",
-                        Description = "Dress",
-                        ImageURL = "",
-                        Country = "Swiss"
-                    }
+                    }                    
                     );
 
                 modelBuilder.Entity<Collection>().HasData(
                     new Collection()
                     {
                         CollectionId = 1,
-                        ManuId = 1,                        
+                        CollectionName = "A",
+                        ManufacturerId = 1,                        
                         Description ="Underwater Watch",
                         ImageURL = ""
                         
@@ -73,21 +58,23 @@ namespace Angel
                     new Collection()
                     {
                         CollectionId = 2,
-                        ManuId = 2,                       
+                        CollectionName = "B",
+                        ManufacturerId = 2,                       
                         Description = "Pilot Watch",
                         ImageURL = ""
                     },
                     new Collection()
                     {
                         CollectionId = 3,
-                        ManuId = 3,                        
+                        CollectionName = "C",
+                        ManufacturerId = 3,                        
                         Description = "Chronograph",
                         ImageURL = ""
                     },
                     new Collection()
                     {
                         CollectionId = 4,
-                        ManuId = 4,                       
+                        ManufacturerId = 4,                       
                         Description = "Chronograph",
                         ImageURL = ""
                     }

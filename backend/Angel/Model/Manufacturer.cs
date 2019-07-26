@@ -7,13 +7,13 @@ namespace Angel.Model
 {
     public class Manufacturer
     {
-        public int ManuId { get; set; }
+        public int ManufacturerId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImageURL { get; set; }
         public string Country { get; set; }
 
-
+        public virtual List<Collection> Collections { get; set; }
 
     }
 }
