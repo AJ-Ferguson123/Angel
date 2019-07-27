@@ -11,11 +11,17 @@ namespace Angel.Controllers
     [ApiController]
     public class ManufacturerController : ControllerBase
     {
-        // GET: api/<controller>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private SiteContext db;
+
+        public ManufacturerController(SiteContext db)
         {
-            return new string[] { "Rolex" };
+            this.db = db;
+        }
+        // GET: api/Manufacturers
+        [HttpGet]
+        public ActionResult<IEnumerable<Manufacturer>> Get()
+        {
+            return db.Manufacturers;
         }
 
         // GET api/<controller>/5
