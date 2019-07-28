@@ -10,8 +10,8 @@ namespace Angel
     
         public class SiteContext : DbContext
         {
-            public DbSet<Collection> Collections { get; set; }
             public DbSet<Manufacturer> Manufacturers { get; set; }
+            public DbSet<Collection> Collections { get; set; }
             public DbSet<Watch> Watches { get; set; }
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
