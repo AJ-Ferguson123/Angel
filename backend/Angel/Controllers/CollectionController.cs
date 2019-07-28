@@ -26,6 +26,12 @@ namespace Angel.Controllers
 
         }
 
+        [HttpGet("{id}")]
+        public ActionResult<Collection> GetById(int id)
+        {
+            return db.Collections.Single(a => a.CollectionId == id);
+        } 
+
         // POST api/Collection
         [HttpPost]
         public ActionResult<Manufacturer> Post([FromBody] Collection collection)
@@ -34,5 +40,25 @@ namespace Angel.Controllers
             db.SaveChanges();
             return db.Manufacturers.Single(a => a.ManufacturerId == collection.ManufacturerId);
         }
+
+        // PUT api/values/5
+        [HttpPut]
+        public ActionResult<IEnumerable<Collection>> Put([FromBody] Collection collection)
+        {
+            db.Collections.Update(collection);
+            db.SaveChanges();
+            return db.Collections.ToList();
+        }
+
+
+        [HttpDelete]
+        public ActionResult<IEnumerable<Collection>> Delete(Collection collection)
+        {
+            db.Collections.Remove(collection);
+            db.SaveChanges();
+            return db.Collections.ToList();
+        }
+
+
     }
 }
