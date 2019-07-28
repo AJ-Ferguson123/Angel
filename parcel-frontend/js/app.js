@@ -1,7 +1,6 @@
 import Home from './components/home';
-import Manufacurer from './components/manufacurer';
-import apiActions from '.js/api/api-actions';
-import Manufacturer from './manufacturers';
+import Manufacturer from './components/manufacturers';
+import apiActions from './api/api-actions';
 
 
 
