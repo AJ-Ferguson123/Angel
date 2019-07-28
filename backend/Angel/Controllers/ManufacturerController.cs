@@ -24,6 +24,11 @@ namespace Angel.Controllers
             return db.Manufacturers;
         }
 
+        [HttpGet("{id}")]
+        public ActionResult<Manufacturer> GetById(int id)
+        {
+            return db.Manufacturers.Single(a => a.ManufacturerId == id);
+        }
 
         // POST api/Manufacturer
         [HttpPost]
@@ -35,15 +40,21 @@ namespace Angel.Controllers
         }
 
         // PUT api/<controller>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        public ActionResult<IEnumerable<Manufacturer>> Put([FromBody] Manufacturer manufacturer)
         {
+            db.Manufacturers.Update(manufacturer);
+            db.SaveChanges();
+            return db.Manufacturers.ToList();
         }
 
         // DELETE api/<controller>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        public ActionResult<IEnumerable<Manufacturer>> Delete(Manufacturer manufacturer)
         {
+            db.Manufacturers.Remove(manufacturer);
+            db.SaveChanges();
+            return db.Manufacturers.ToList();
         }
     }
 }
