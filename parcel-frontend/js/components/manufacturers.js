@@ -3,7 +3,7 @@ export default function Manufacturer(manufacturers){
     <h3>Manufacturers</h3>
     <ul>
     
-    ${manufacturers.map(manufacturers => {
+    ${manufacturers.map(manufacturer => {
         return `
             <li>
                 <h3 class='manufacturer_name'>${manufacturer.name}</h3>

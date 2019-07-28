@@ -14,7 +14,7 @@ function pageBuild(){
 }
 
 function home(){
-    const homebutton = document.getElementById('home')
+    const homebutton = document.getElementById('nav_home')
     //listen for the home button click
     homebutton.addEventListener('click', function(){
         //when the click happens, display home page
@@ -28,7 +28,7 @@ function navManufacturers(){
     console.log(manufacturersbutton)
     manufacturersbutton.addEventListener('click', function(){
         apiActions.getRequest(
-            'https://localhost:44301/api/manufacturer', 
+            'https://localhost:44378/api/manufacturer', 
             manufacturers => {
                 document.querySelector('#main').innerHTML = Manufacturer(manufacturers)
             }
@@ -43,6 +43,7 @@ function navManufacturers(){
             const addcountry = event.target.parentElement.querySelector('.add-manufacturer_country').value;
             const addimageURL = event.target.parentElement.querySelector('.add-manufacturer_imageURL').value;
             const adddescription = event.target.parentElement.querySelector('.add-manufacturer_description').value;
+            
             const info = {
                 id: 0,
                 name: addmanufacturer,
@@ -52,7 +53,7 @@ function navManufacturers(){
 
             };
 
-            apiActions.postRequest('https://localhost:44301/api/manufacturer', info, manufacturers => {
+            apiActions.postRequest('https://localhost:44378/api/manufacturer', info, manufacturers => {
                 document.querySelector('#main').innerHTML = Manufacturer(manufacturers);
             })
         }
