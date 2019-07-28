@@ -24,17 +24,14 @@ namespace Angel.Controllers
             return db.Manufacturers;
         }
 
-        // GET api/<controller>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "manufacturer";
-        }
 
-        // POST api/<controller>
+        // POST api/Manufacturer
         [HttpPost]
-        public void Post([FromBody]string value)
+        public ActionResult<IEnumerable<Manufacturer>> Post([FromBody] Manufacturer Manufacturer)
         {
+            db.Manufacturers.Add(Manufacturer);
+            db.SaveChanges();
+            return db.Manufacturers.ToList();
         }
 
         // PUT api/<controller>/5
