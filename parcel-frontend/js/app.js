@@ -20,7 +20,6 @@ function home(){
         //when the click happens, display home page
         const main = document.getElementById('info')
         main.innerHTML = Home();
-        //NOTE to Angel: Test adding get and post request to this block of code, and adding a model and controller for home in separate branch bc its currently working form index.html. 
     })
 }
 
