@@ -9,3 +9,7 @@ body{
 ul li {
     list-style-type: none;
 }
+
+nav li{
+    cursor: pointer;
+}
