@@ -14,7 +14,6 @@ export default function singleManufacturer(manufacturer){
     <button class='edit-manufacturer_submit'>Submit</button>
     </section>
     </div>
-    <p>${manufacturer.description}</p>
     </div>
     
 

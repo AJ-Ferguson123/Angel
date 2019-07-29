@@ -4,7 +4,6 @@ import Collection from './components/collections';
 import apiActions from './api/api-actions';
 import Watches from './components/watches';
 import SingleManufacturer from './components/singleManufacturer';
-import ManufacturerEditSection from './components/manufacturer-edit-section';
 
 
 
@@ -14,7 +13,7 @@ pageBuild();
 function pageBuild(){
     home();
     navManufacturers();
-    editBoxDisplay();
+    navCollections();
 
     
 }
@@ -36,7 +35,7 @@ function navManufacturers(){
         apiActions.getRequest(
             'https://localhost:44378/api/manufacturer', 
             manufacturers => {
-                document.querySelector('#edit-section').innerHTML = ManufacturerEditSection(manufacturers)
+                document.querySelector('#edit-section').innerHTML = Manufacturer(manufacturers)
             }
         )
         document.querySelector('#info').innerHTML = "";
@@ -58,7 +57,7 @@ function navManufacturers(){
                 
             };
             apiActions.postRequest('https://localhost:44378/api/manufacturer', info, manufacturers => {
-                document.querySelector('#edit-section').innerHTML = ManufacturerEditSection(manufacturers);
+                document.querySelector('#edit-section').innerHTML = Manufacturer(manufacturers);
             })
             
         }
@@ -69,6 +68,7 @@ function navManufacturers(){
         if (event.target.classList.contains('edit-manufacturer')){
             const editbox = event.target.parentElement.querySelector('.edit-box')
             editbox.style.display = 'block'
+
         }
 
         if (event.target.classList.contains('edit-manufacturer_submit')){
@@ -88,7 +88,7 @@ function navManufacturers(){
                        
             apiActions.putRequest('https://localhost:44378/api/manufacturer', info, manufacturers => {
                     document.querySelector('#info').innerHTML ="";
-                    document.querySelector('#edit-section').innerHTML = ManufacturerEditSection(manufacturers);
+                    document.querySelector('#edit-section').innerHTML = Manufacturer(manufacturers);
                 }
             );
         }
@@ -115,7 +115,7 @@ function navManufacturers(){
 
             apiActions.deleteRequest('https://localhost:44378/api/manufacturer', info, manufacturers => {
                     document.querySelector('#info').innerHTML = "";
-                    document.querySelector('#edit-section').innerHTML = ManufacturerEditSection(manufacturers);
+                    document.querySelector('#edit-section').innerHTML = Manufacturer(manufacturers);
                 }
             );
         }
@@ -133,6 +133,40 @@ function navManufacturers(){
 // }
 
 
+function navCollections(){
+    const collectionsbutton = document.querySelector('#nav_collections')
+    collectionsbutton.addEventListener('click', function(){
+        apiActions.getRequest(
+            'https://localhost:44378/api/collection', 
+            collections => {
+                document.querySelector('#edit-section').innerHTML = Collection(collections)
+            }
+        )
+        document.querySelector('#info').innerHTML = "";
+    });
+        
+        document.getElementById('main').addEventListener('click', function() {
+            if (event.target.classList.contains('add-collection_submit')) {
+            const addcollection = event.target.parentElement.querySelector('.add-collection_name').value;
+            const addimageURL = event.target.parentElement.querySelector('.add-collection_imageURL').value;
+            const adddescription = event.target.parentElement.querySelector('.add-collection_description').value;
+            
+            const info = {
+                id: 0,
+                name: addcollection,
+                imageURL: addimageURL,
+                description: adddescription
+                
+            };
+            apiActions.postRequest('https://localhost:44378/api/collection', info, collections => {
+                document.querySelector('#edit-section').innerHTML = Collection(collections);
+            })
+            
+        }
+    });
 
 
+
+
+}
 
