@@ -123,14 +123,14 @@ function navManufacturers(){
 }    
 
 
-function editBoxDisplay(){
-    document.getElementById('main').addEventListener('click', function() {
-        if (event.target.classList.contains('edit-button')) {
-            const editbox = event.target.parentElement.querySelector('.edit-box')
-            editbox.style.display = 'block'
-        }
-    })
-}
+// function editBoxDisplay(){
+//     document.getElementById('main').addEventListener('click', function() {
+//         if (event.target.classList.contains('edit-button')) {
+//             const editbox = event.target.parentElement.querySelector('.edit-box')
+//             editbox.style.display = 'block'
+//         }
+//     })
+// }
 
 
 
