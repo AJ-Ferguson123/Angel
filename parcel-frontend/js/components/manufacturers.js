@@ -1,20 +1,5 @@
 export default function Manufacturer(manufacturers){
     return `
-    <h3>Manufacturers</h3>
-    <ul>
-    
-    ${manufacturers.map(manufacturer => {
-        return `
-            <li>
-                <h3 class='manufacturer_name'>${manufacturer.name}</h3>
-                <input class='manufacturer_id' type='hidden' value='${manufacturer.manufacturerId}'>
-            </li>
-        `;
-    })
-    .join("")}
-        </ul>
-        
-        <button class='add-manufacturer'>Add Manufacturer</button>
     <section class='add-manufacturer'>
         <input class='add-manufacturer_name' type='text' placeholder='Add manufacturer name...'>
         <input class='add-manufacturer_country' type='text' placeholder='Add country...'>
@@ -23,8 +8,6 @@ export default function Manufacturer(manufacturers){
         <button class='add-manufacturer_submit'>Submit</button>
     </section>
 
-   
- 
 
     `
 }
