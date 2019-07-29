@@ -15,7 +15,7 @@ nav li{
 }
 
   .nav {  
-    display:flex;
+     display:flex;
     flex-flow: row; 
     margin: 20px 20px;
     font-weight: bold;
@@ -49,7 +49,7 @@ nav ul:hover{
     color: aqua;
 }
 #nav_collections:hover{
-    background: grey;
+    color: grey;
 }
 
 #nav_watches{
@@ -60,12 +60,12 @@ nav ul:hover{
     background: grey;
 }
 
-#para{
+/* .para{
     padding: 1em;
     text-align: center;
     
     border-radius: 5px;    
-}
+} */
 /* #info{
     text-align: center;
     background-color: aliceblue;

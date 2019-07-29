@@ -27,13 +27,13 @@ function home(){
         main.innerHTML = Home();
     })
 }
-    // function watches(){
-    //     const watchbutton = document.getElementById('nav__watches')
-    //     watchbutton.addEventListener('click', function(){
-    //         const main = document.getElementById('main')
-    //         main.innerHTML = Songs();
-    //     })
-    // }
+    function watches(){
+        const watchbutton = document.getElementById('nav__watches')
+        watchbutton.addEventListener('click', function(){
+            const main = document.getElementById('main')
+            main.innerHTML = Watches();
+        })
+    }
     
     // function collections(){
     //     const collectionbutton = document.getElementById('nav_collections')
@@ -102,6 +102,11 @@ function navManufacturers(){
                 }
             );
         }
+
+
+
+
+
     });
 
 
@@ -125,44 +130,46 @@ function navManufacturers(){
 
 
 
-//         document.getElementById('main').addEventListener('click', function(){
-    //             if (event.target.classList.contains('add-watches_submit')){
-    //                 const addwatch = event.target.parentElement.querySelector('.add-watch_name').value;
-    //                 const addrefNumber = event.target.parentElement.querySelector('add-wacth_refNumber').value;
-    //                 const addmovement = event.target.parentElement.querySelector('.add-watch_movement').value;
+        // document.getElementById('main').addEventListener('click', function(){
+        //         if (event.target.classList.contains('add-watches_submit')){
+        //             const addwatch = event.target.parentElement.querySelector('.add-watch_name').value;
+        //             const addrefNumber = event.target.parentElement.querySelector('add-wacth_refNumber').value;
+        //             const addmovement = event.target.parentElement.querySelector('.add-watch_movement').value;
                     
-    //                 const info = {
-    //             name: addwatch,
-    //             refNumber: addrefNumber,
-    //             movement: addmovement
-    //         }
-    //         }
+        //             const info = {
+        //         name: addwatch,
+        //         refNumber: addrefNumber,
+        //         movement: addmovement
+        
+        //     }
+        // }
     // })         
 
     //     }
    
     //            
     //         });
-    //         document.getElementById('main').addEventListener('click', function() {
-    //             if (event.target.classList.contains('add-collection_submit')) {
-    //                 const addcollectionName = event.target.parentElement.querySelector('.add-collection_name').value;                                   
-    //                 const addimageURL = event.target.parentElement.querySelector('.add-collection_imageURL').value;
-    //                 const adddescription = event.target.parentElement.querySelector('.add-collection_description').value;
+        //     document.getElementById('main').addEventListener('click', function() {
+        //         if (event.target.classList.contains('add-collection_submit')) {
+        //             const addcollectionName = event.target.parentElement.querySelector('.add-collection_name').value;                                   
+        //             const addimageURL = event.target.parentElement.querySelector('.add-collection_imageURL').value;
+        //             const adddescription = event.target.parentElement.querySelector('.add-collection_description').value;
                     
-    //                 const info = {
-    //                     id: 0,
-    //                     collectionname: addcollection,                        
-    //                     imageURL: addimageURL,
-    //                     description: adddescription
+        //             const info = {
+        //                 id: 0,
+        //                 collectionname: addcollection,                        
+        //                 imageURL: addimageURL,
+        //                 description: adddescription
         
-    //                 };
+                   
 
                       
+        //     // });
+        // // }
+
+
+                    
+
         //     });
-        // }
-
-
-
-
-
-
+            
+        
