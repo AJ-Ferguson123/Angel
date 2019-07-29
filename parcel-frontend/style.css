@@ -13,3 +13,60 @@ ul li {
 nav li{
     cursor: pointer;
 }
+
+  .nav {  
+    display:flex;
+    flex-flow: row; 
+    margin: 20px 20px;
+    font-weight: bold;
+    padding: 20px 20px 20px;
+    background:rgb(80, 32, 32);     
+    justify-content: center;
+    margin-bottom: 1em;   
+    }  
+
+nav ul:hover{
+    background: white;
+    border-radius: 10px;
+}
+
+#nav_home{  
+ color: rgb(34, 122, 138);
+}
+
+#nav_home:hover{
+    background: aqua;   
+}
+#nav_manufacturers{
+    color: rgb(34, 122, 138);
+}
+
+#nav_manufacturers:hover{
+    background: aqua;
+}
+
+#nav_collections{
+    color: aqua;
+}
+#nav_collections:hover{
+    background: grey;
+}
+
+#nav_watches{
+    color: aqua;
+}
+
+#nav_watches:hover{    
+    background: grey;
+}
+
+#para{
+    padding: 1em;
+    text-align: center;
+    
+    border-radius: 5px;    
+}
+/* #info{
+    text-align: center;
+    background-color: aliceblue;
+} */
