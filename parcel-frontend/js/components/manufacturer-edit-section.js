@@ -12,10 +12,7 @@ export default function ManufacturerEditSection(manufacturers){
     })
     .join("")}
         </ul>
-        <div id='button-box'>
-        <button class='delete-manufacturer'>Delete Manufacturer</button>
-        <button class='add-manufacturer'>Add Manufacturer</button>
-        </div>
+      
 
         <section class='add-manufacturer'>
         <input class='add-manufacturer_name' type='text' placeholder='Add manufacturer name...'>

@@ -104,24 +104,22 @@ function navManufacturers(){
             })
         }
     })
-////modal
-    // document.getElementById('main').addEventListener('click', function(){
-    //     if(event.target.classList.contains('add-manufacturer_submit')){
-    //         const manufacturername = event.target.parentElement.querySelector('.add-manufacturer_name').value;
-    //         const manufacturercountry = event.target.parentElement.querySelector('.add-manufacturer_country').value;
-            
-    //         const info = {
-    //             id: 0,
-    //             name: manufacturername,
-    //             country: manufacturercountry
-    //         };
     
-    //         apiActions.postRequest('https://localhost:44378/api/manufacturer', info, manufacturers => {
-    //             document.querySelector('#edit-section').innerHTML = ManufacturerEditSection(manufacturers);
-    //         })
-    //     }
-    // })
+    document.getElementById('main').addEventListener('click', function(){
+        if (event.target.classList.contains('delete-manufacturer')){
+            const removemanufacturer_id = event.target.parentElement.querySelector('.manufacturer_id').value;
 
+            const info = {
+                ManufacturerId: removemanufacturer_id
+            };
+
+            apiActions.deleteRequest('https://localhost:44378/api/manufacturer', info, manufacturers => {
+                    document.querySelector('#info').innerHTML = "";
+                    document.querySelector('#edit-section').innerHTML = ManufacturerEditSection(manufacturers);
+                }
+            );
+        }
+    });
 }    
 
 

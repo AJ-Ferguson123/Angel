@@ -3,7 +3,9 @@ export default function singleManufacturer(manufacturer){
     <img src='${manufacturer.imageURL}' id='main-image' alt='Manufacturer image'></img>
     
     <div id='name'><h3>${manufacturer.name}</h3>
-
+    <div id='button-box'>
+    <button class='delete-manufacturer'>Delete Manufacturer</button>
+    <button class='add-manufacturer'>Add Manufacturer</button>
         <section class='edit-box'>
             <input class='manufacturer_id' type='hidden' value='${manufacturer.manufacturerId}'>
             <input class='edit-manufacturer_imageURL' type='hidden' value='${manufacturer.imageURL}'>
