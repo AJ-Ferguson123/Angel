@@ -153,7 +153,7 @@ function navCollections(){
             const addcollection = event.target.parentElement.querySelector('.add-collection_name').value;
             const addimageURL = event.target.parentElement.querySelector('.add-collection_imageURL').value;
             const adddescription = event.target.parentElement.querySelector('.add-collection_description').value;
-            
+            const manufacturerId = event.target.parentElement.querySelector('.manufacturer_id').value;
             const info = {
                 id: 0,
                 collectionName: addcollection,
@@ -163,6 +163,10 @@ function navCollections(){
             };
             apiActions.postRequest('https://localhost:44378/api/collection', info, collections => {
                 document.querySelector('#edit-section').innerHTML = Collection(collections);
+            })
+            apiActions.getRequest('https://localhost:44301/api/manufacturer/'+ manufacturerId, 
+            collection =>{
+                document.querySelector('#info').innerHTML = SingleCollection(collection)
             })
             
         }
@@ -177,6 +181,7 @@ function navCollections(){
 
         if (event.target.classList.contains('edit-collection_submit')){
             const editcollection_id = event.target.parentElement.querySelector('.collection_id').value;
+            const editcollection_manufacturerid = event.target.parentElement.querySelector('.manufacturer_id').value;
             const editcollection_name = event.target.parentElement.querySelector('.edit-collection_name').value;
             const editcollection_imageURL = event.target.parentElement.querySelector('.edit-collection_imageURL').value;
             const editcollection_description = event.target.parentElement.querySelector('.edit-collection_description').value;
@@ -185,7 +190,8 @@ function navCollections(){
                 collectionId: editcollection_id,
                 collectionName: editcollection_name,
                 imageURL: editcollection_imageURL,
-                description: editcollection_description
+                description: editcollection_description,
+                manufacturerId: editcollection_manufacturerid
             };
                        
             apiActions.putRequest('https://localhost:44378/api/collection', info, collections => {
@@ -269,15 +275,17 @@ function navWatches(){
 
         if (event.target.classList.contains('edit-watch_submit')){
             const editwatch_id = event.target.parentElement.querySelector('.watch_id').value;
+            const editwatch_collectionid = event.target.parentElement.querySelector('.collection_id').value;
             const editwatch_name = event.target.parentElement.querySelector('.edit-watch_name').value;
             const editwatch_imageURL = event.target.parentElement.querySelector('.edit-watch_imageURL').value;
             const editwatch_movement = event.target.parentElement.querySelector('.edit-watch_movement').value;
             
             const info = {
                 watchId: editwatch_id,
-                Name: editwatch_name,
+                name: editwatch_name,
                 imageURL: editwatch_imageURL,
-                movement: editwatch_movement
+                movement: editwatch_movement,
+                collectionId: editwatch_collectionid
             };
                        
             apiActions.putRequest('https://localhost:44378/api/watch', info, watches => {
@@ -288,6 +296,32 @@ function navWatches(){
         }
     });
 
+    
+    document.getElementById('edit-section').addEventListener('click', function(){
+        if (event.target.classList.contains('watch_name')){
+            const watchId = event.target.parentElement.querySelector('.watch_id').value;
+            apiActions.getRequest('https://localhost:44378/api/watch/'+ watchId, 
+            watch =>{
+                document.querySelector('#info').innerHTML = SingleWatch(watch)
+            })
+        }
+    })
+    
+    document.getElementById('main').addEventListener('click', function(){
+        if (event.target.classList.contains('delete-watch')){
+            const removewatch_id = event.target.parentElement.querySelector('.watch_id').value;
+
+            const info = {
+                watchId: removewatch_id
+            };
+
+            apiActions.deleteRequest('https://localhost:44378/api/watch', info, watches => {
+                    document.querySelector('#info').innerHTML = "";
+                    document.querySelector('#edit-section').innerHTML = Watch(watches);
+                }
+            );
+        }
+    });
 
 
 }

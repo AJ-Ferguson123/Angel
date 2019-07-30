@@ -7,6 +7,7 @@ export default function singleCollection(collection){
     <button class='delete-collection'>Delete Collection</button>
     <section class='edit-box'>
     <input class='collection_id' type='hidden' value='${collection.collectionId}'>
+    <input class='manufacturer_id' type='hidden' value='${collection.manufacturerId}'>
     <input class='edit-collection_imageURL' type='hidden' value='${collection.imageURL}'>
     <input class='edit-collection_name' type='text' value='${collection.collectionName}'>
     <textarea class='edit-collection_description'>${collection.description}</textarea>
