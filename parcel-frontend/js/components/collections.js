@@ -5,7 +5,7 @@ export default function Collection(collections){
     ${collections.map(collection => {
         return `
             <li>
-                <h3 class='collection_name'>${collection.name}</h3>
+                <h3 class='collection_name'>${collection.collectionName}</h3>
                 <input class='collection_id' type='hidden' value='${collection.collectionId}'>
             </li>
         `;

@@ -4,6 +4,7 @@ import Collection from './components/collections';
 import apiActions from './api/api-actions';
 import Watches from './components/watches';
 import SingleManufacturer from './components/singleManufacturer';
+import SingleCollection from './components/singleCollection';
 
 
 
@@ -153,7 +154,7 @@ function navCollections(){
             
             const info = {
                 id: 0,
-                name: addcollection,
+                collectionName: addcollection,
                 imageURL: addimageURL,
                 description: adddescription
                 
@@ -165,7 +166,59 @@ function navCollections(){
         }
     });
 
+    document.getElementById('info').addEventListener('click', function(){
+        if (event.target.classList.contains('edit-collection')){
+            const editbox = event.target.parentElement.querySelector('.edit-box')
+            editbox.style.display = 'block'
 
+        }
+
+        if (event.target.classList.contains('edit-collection_submit')){
+            const editcollection_id = event.target.parentElement.querySelector('.collection_id').value;
+            const editcollection_name = event.target.parentElement.querySelector('.edit-collection_name').value;
+            const editcollection_imageURL = event.target.parentElement.querySelector('.edit-collection_imageURL').value;
+            const editcollection_description = event.target.parentElement.querySelector('.edit-collection_description').value;
+            
+            const info = {
+                collectionId: editcollection_id,
+                collectionName: editcollection_name,
+                imageURL: editcollection_imageURL,
+                description: editcollection_description
+            };
+                       
+            apiActions.putRequest('https://localhost:44378/api/collection', info, collections => {
+                    document.querySelector('#info').innerHTML = "";
+                    document.querySelector('#edit-section').innerHTML = Collection(collections);
+                }
+            );
+        }
+    });
+
+    document.getElementById('edit-section').addEventListener('click', function(){
+        if (event.target.classList.contains('collection_name')){
+            const collectionId = event.target.parentElement.querySelector('.collection_id').value;
+            apiActions.getRequest('https://localhost:44378/api/collection/'+ collectionId, 
+            collection =>{
+                document.querySelector('#info').innerHTML = SingleCollection(collection)
+            })
+        }
+    })
+    
+    document.getElementById('main').addEventListener('click', function(){
+        if (event.target.classList.contains('delete-collection')){
+            const removecollection_id = event.target.parentElement.querySelector('.collection_id').value;
+
+            const info = {
+                collectionId: removecollection_id
+            };
+
+            apiActions.deleteRequest('https://localhost:44378/api/collection', info, collections => {
+                    document.querySelector('#info').innerHTML = "";
+                    document.querySelector('#edit-section').innerHTML = Collection(collections);
+                }
+            );
+        }
+    });
 
 
 }
