@@ -17,7 +17,6 @@ export default function Collection(collections){
 
         <section class='add-collection'>
             <input class='add-collection_name' type='text' placeholder='Add collection name...'>
-            <input class='add-collection_imageURL' type='text' placeholder='Add collection image URL...'>
             <input class='add-collection_description' type='text' placeholder='Add collection description...'>
             <button class='add-collection_submit'>Submit</button>
         </section>

@@ -144,13 +144,11 @@ function navCollections(){
         document.getElementById('main').addEventListener('click', function() {
             if (event.target.classList.contains('add-collection_submit')) {
             const addcollection = event.target.parentElement.querySelector('.add-collection_name').value;
-            const addimageURL = event.target.parentElement.querySelector('.add-collection_imageURL').value;
             const adddescription = event.target.parentElement.querySelector('.add-collection_description').value;
             const manufacturerId = event.target.parentElement.querySelector('.manufacturer_id').value;
             const info = {
                 id: 0,
                 collectionName: addcollection,
-                imageURL: addimageURL,
                 description: adddescription
                 
             };
@@ -176,13 +174,11 @@ function navCollections(){
             const editcollection_id = event.target.parentElement.querySelector('.collection_id').value;
             const editcollection_manufacturerid = event.target.parentElement.querySelector('.manufacturer_id').value;
             const editcollection_name = event.target.parentElement.querySelector('.edit-collection_name').value;
-            const editcollection_imageURL = event.target.parentElement.querySelector('.edit-collection_imageURL').value;
             const editcollection_description = event.target.parentElement.querySelector('.edit-collection_description').value;
             
             const info = {
                 collectionId: editcollection_id,
                 collectionName: editcollection_name,
-                imageURL: editcollection_imageURL,
                 description: editcollection_description,
                 manufacturerId: editcollection_manufacturerid
             };

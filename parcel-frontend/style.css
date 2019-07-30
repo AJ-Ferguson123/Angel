@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    padding: 0;
+    padding: 2em;
     background-color: slategray;
     text-align: center;
     color: silver;
@@ -32,6 +32,10 @@ span {
 
 p {
  font-size: 25px;
+}
+
+h6{
+font-size:18px;
 }
 
 
