@@ -5,7 +5,7 @@ export default function Watch(watches){
     ${watches.map(watch => {
         return `
             <li>
-                <h3 class='watch_name'>${watch.watchName}</h3>
+                <h3 class='watch_name'>${watch.Name}</h3>
                 <input class='watch_id' type='hidden' value='${watch.watchId}'>
             </li>
         `;

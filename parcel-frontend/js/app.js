@@ -2,9 +2,10 @@ import Home from './components/home';
 import Manufacturer from './components/manufacturers';
 import Collection from './components/collections';
 import apiActions from './api/api-actions';
-import Watches from './components/watches';
+import Watch from './components/watches';
 import SingleManufacturer from './components/singleManufacturer';
 import SingleCollection from './components/singleCollection';
+import SingleWatch from './components/singleWatch';
 
 
 
@@ -15,6 +16,7 @@ function pageBuild(){
     home();
     navManufacturers();
     navCollections();
+    navWatches();
 
     
 }
@@ -223,3 +225,69 @@ function navCollections(){
 
 }
 
+//////////////////////////////////////////////////WATCHESS
+
+
+function navWatches(){
+    const watchesbutton = document.querySelector('#nav_watches')
+    watchesbutton.addEventListener('click', function(){
+        apiActions.getRequest(
+            'https://localhost:44378/api/watch', 
+            watches => {
+                document.querySelector('#edit-section').innerHTML = Watch(watches)
+            }
+        )
+        document.querySelector('#info').innerHTML = "";
+    });
+        
+        document.getElementById('main').addEventListener('click', function() {
+            if (event.target.classList.contains('add-watch_submit')) {
+            const addwatch = event.target.parentElement.querySelector('.add-watch_name').value;
+            const addimageURL = event.target.parentElement.querySelector('.add-watch_imageURL').value;
+            const addmovement = event.target.parentElement.querySelector('.add-watch_movement').value;
+            
+            const info = {
+                id: 0,
+                Name: addwatch,
+                imageURL: addimageURL,
+                movement: addmovement
+                
+            };
+            apiActions.postRequest('https://localhost:44378/api/watch', info, watches => {
+                document.querySelector('#edit-section').innerHTML = Watch(watches);
+            })
+            
+        }
+    });
+
+    document.getElementById('info').addEventListener('click', function(){
+        if (event.target.classList.contains('edit-watch')){
+            const editbox = event.target.parentElement.querySelector('.edit-box')
+            editbox.style.display = 'block'
+
+        }
+
+        if (event.target.classList.contains('edit-watch_submit')){
+            const editwatch_id = event.target.parentElement.querySelector('.watch_id').value;
+            const editwatch_name = event.target.parentElement.querySelector('.edit-watch_name').value;
+            const editwatch_imageURL = event.target.parentElement.querySelector('.edit-watch_imageURL').value;
+            const editwatch_movement = event.target.parentElement.querySelector('.edit-watch_movement').value;
+            
+            const info = {
+                watchId: editwatch_id,
+                Name: editwatch_name,
+                imageURL: editwatch_imageURL,
+                movement: editwatch_movement
+            };
+                       
+            apiActions.putRequest('https://localhost:44378/api/watch', info, watches => {
+                    document.querySelector('#info').innerHTML = "";
+                    document.querySelector('#edit-section').innerHTML = Watch(watches);
+                }
+            );
+        }
+    });
+
+
+
+}
