@@ -71,7 +71,7 @@ namespace Angel
                     {
                         WatchId = 1,
                         Name = "Submariner",
-                        RefNumber = "1234",
+                        ImageURL = "",
                         Movement = "3701",
                         CollectionId = 1
                     },
@@ -79,7 +79,7 @@ namespace Angel
                     {
                         WatchId = 2,
                         Name = "GMT-MASTER",
-                        RefNumber = "2345",
+                        ImageURL = "",
                         Movement = "3702",
                         CollectionId = 2
                     }

@@ -9,7 +9,7 @@ namespace Angel.Model
     {
         public int WatchId { get; set; }
         public string Name { get; set; }
-        public string RefNumber { get; set; }
+        public string ImageURL { get; set; }
         public string Movement { get; set; }
         public int CollectionId { get; set; }
 
