@@ -30,7 +30,7 @@ namespace Angel.Controllers
         public ActionResult<Collection> GetById(int id)
         {
             return db.Collections.Single(a => a.CollectionId == id);
-        } 
+        }
 
         // POST api/Collection
         [HttpPost]
@@ -58,7 +58,6 @@ namespace Angel.Controllers
             db.SaveChanges();
             return db.Collections.ToList();
         }
-
 
     }
 }

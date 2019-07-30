@@ -49,7 +49,7 @@ namespace Angel
                     new Collection()
                     {
                         CollectionId = 1,
-                        CollectionName = "A",
+                        CollectionName = "Coll1",
                         ManufacturerId = 1,                        
                         Description ="Underwater Watch",
                         ImageURL = ""
@@ -58,26 +58,12 @@ namespace Angel
                     new Collection()
                     {
                         CollectionId = 2,
-                        CollectionName = "B",
+                        CollectionName = "Coll2",
                         ManufacturerId = 2,                       
                         Description = "Pilot Watch",
                         ImageURL = ""
-                    },
-                    new Collection()
-                    {
-                        CollectionId = 3,
-                        CollectionName = "C",
-                        ManufacturerId = 1,                        
-                        Description = "Chronograph",
-                        ImageURL = ""
-                    },
-                    new Collection()
-                    {
-                        CollectionId = 4,
-                        ManufacturerId = 2,                       
-                        Description = "Chronograph",
-                        ImageURL = ""
                     }
+                
                     );
 
                 modelBuilder.Entity<Watch>().HasData(
@@ -96,23 +82,8 @@ namespace Angel
                         RefNumber = "2345",
                         Movement = "3702",
                         CollectionId = 2
-                    },
-                    new Watch()
-                    {
-                        WatchId = 3,
-                        Name = "Daytona",
-                        RefNumber = "3456",
-                        Movement = "3702",
-                        CollectionId = 3
-                    },
-                    new Watch()
-                    {
-                        WatchId = 4,
-                        Name = "Oyster Perpetual",
-                        RefNumber = "4567",
-                        Movement = "3703",
-                        CollectionId = 4
                     }
+             
                     );
 
 
