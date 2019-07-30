@@ -1,6 +1,5 @@
 export default function singleManufacturer(manufacturer){
     return `
-    <img src='${manufacturer.imageURL}' id='main-image' alt='Manufacturer image'></img>
     
     <div id='name'><h3>${manufacturer.name}</h3>
     <div id='button-box'>

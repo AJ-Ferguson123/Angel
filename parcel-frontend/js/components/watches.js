@@ -6,6 +6,7 @@ export default function Watch(watches){
         return `
             <li>
                 <h3 class='watch_name'>${watch.name}</h3>
+                <img src='${watch.imageURL}' id='main-image' alt='Watch image'></img>
                 <input class='watch_id' type='hidden' value='${watch.watchId}'>
             </li>
         `;

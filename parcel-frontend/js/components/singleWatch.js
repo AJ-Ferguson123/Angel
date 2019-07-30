@@ -1,6 +1,5 @@
 export default function singleWatch(watch){
     return `
-    <img src='${watch.imageURL}' id='main-image' alt='Watch image'></img>
     
     <div id='name'><h3>${watch.name}</h3>
     <div id='button-box'>

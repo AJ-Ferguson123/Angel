@@ -6,7 +6,8 @@ export default function Manufacturer(manufacturers){
     ${manufacturers.map(manufacturer => {
         return `
             <li>
-                <h3 class='manufacturer_name'>${manufacturer.name}</h3>
+            <h3 class='manufacturer_name'>${manufacturer.name}</h3>
+                <img src='${manufacturer.imageURL}' id='main-image' alt='Manufacturer image'></img>
                 <input class='manufacturer_id' type='hidden' value='${manufacturer.manufacturerId}'>
             </li>
         `;
