@@ -11,8 +11,7 @@ namespace Angel.Model
         public int ManufacturerId { get; set; }
         public string CollectionName { get; set; }
         public string Description { get; set; }
-        public string ImageURL { get; set; }
-
+        
         public virtual List<Watch> Watches { get; set; }
     }
 }

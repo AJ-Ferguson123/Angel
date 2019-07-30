@@ -31,16 +31,16 @@ namespace Angel
                     {
                         ManufacturerId = 1,
                         Name = "Rolex",                        
-                        Description ="Diver",
-                        ImageURL = "",
+                        Description = "Rolex SA is a Swiss luxury watch manufacturer based in Geneva, Switzerland. Originally founded as Wilsdorf and Davis by Hans Wilsdorf and Alfred Davis in London, England in 1905, the company registered Rolex as the brand name of its watches in 1908 and became Rolex Watch Co. Ltd. in 1915.",
+                        ImageURL = "https://upload.wikimedia.org/wikipedia/en/9/95/Rolex_logo.svg",
                         Country = "Swiss"
                     },
                     new Manufacturer()
                     {
                         ManufacturerId = 2,
                         Name = "Omega SA",
-                        Description = "Pilot",
-                        ImageURL = "",
+                        Description = "Omega SA is a Swiss luxury watchmaker based in Biel/Bienne, Switzerland. Founded by Louis Brandt in La Chaux-de-Fonds in 1848, the company formally operated as the La Generale Watch Co. until incorporating the name Omega in 1903, becoming Louis Brandt et Frère - Omega Watch & Co.",
+                        ImageURL = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwilvpuK79vjAhVJDq0KHW1iD5QQjRx6BAgBEAU&url=http%3A%2F%2Flogok.org%2Fomega-logo%2F&psig=AOvVaw3-48uIkp6C4cUFSgLfGQfX&ust=1564549445969194",
                         Country = "Swiss"
                     }                    
                     );
@@ -49,19 +49,19 @@ namespace Angel
                     new Collection()
                     {
                         CollectionId = 1,
-                        CollectionName = "Coll1",
-                        ManufacturerId = 1,                        
-                        Description ="Underwater Watch",
-                        ImageURL = ""
-                        
+                        CollectionName = "Classic",
+                        ManufacturerId = 1,                       
+                        Description = "The Rolex Classic collection consists of models that combines Rolex’s know-how and high standards of perfection in an approach that heightens watchmaking heritage in its most timeless form.",
+                       
                     },
                     new Collection()
                     {
                         CollectionId = 2,
-                        CollectionName = "Coll2",
-                        ManufacturerId = 2,                       
-                        Description = "Pilot Watch",
-                        ImageURL = ""
+                        CollectionName = "Sea Master",
+                        ManufacturerId = 2,                        
+                        Description = "In 1970 OMEGA officially launched a watch that had been created to withstand the crushing pressures endured by divers working deep below the ocean’s surface. It was the Seamaster ",
+                        
+                        
                     }
                 
                     );
@@ -70,17 +70,17 @@ namespace Angel
                     new Watch()
                     {
                         WatchId = 1,
-                        Name = "Submariner",
-                        ImageURL = "",
+                        Name = "PearlMaster 39",
+                        ImageURL = "https://www.rolex.com/watches/pearlmaster/m86285-0001.html#",
                         Movement = "3701",
                         CollectionId = 1
                     },
                     new Watch()
                     {
                         WatchId = 2,
-                        Name = "GMT-MASTER",
-                        ImageURL = "",
-                        Movement = "3702",
+                        Name = "Ploprof",
+                        ImageURL = "https://www.omegawatches.com/en-us/watch-omega-seamaster-ploprof-1200m-omega-co-axial-55-x-48-mm-22432552101002",
+                        Movement = "55 X 48 MM",
                         CollectionId = 2
                     }
              
