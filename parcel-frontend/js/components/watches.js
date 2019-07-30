@@ -18,7 +18,7 @@ export default function Watch(watches){
         <section class='add-watch'>
             <input class='add-watch_name' type='text' placeholder='Add watch name...'>
             <input class='add-watch_imageURL' type='text' placeholder='Add watch image URL...'>
-            <input class='add-watch_description' type='text' placeholder='Add watch description...'>
+            <input class='add-watch_movement' type='text' placeholder='Add watch movement...'>
             <button class='add-watch_submit'>Submit</button>
         </section>
     </div>
